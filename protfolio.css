@@ -1,0 +1,376 @@
+@keyframes typewriter{
+    from{
+        width: 0%
+    }
+    to{
+        width: 100%
+    }
+}
+@keyframes blinkTextCursor{
+    from{
+        border-right-color: goldenrod
+    }
+    to{
+        border-right-color: transparent
+    }
+}
+@keyframes font-animation{
+    from {
+        top: 4vh;
+    }
+    to {
+        top: 0vh;
+    }
+}
+@keyframes icon-animation{
+    from {
+        transition: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+@keyframes rotate-logo{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes zoom-logo{
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes blink-text{
+    from {
+        text-shadow: 2px 2px red;
+    }
+    to {
+        text-shadow: 2px 2px blue;
+    }
+}
+:root{
+    --background-color : rgba(0,0,10,1);
+    --font-color : rgba(255, 255, 255, 1);
+    --font-family : 'Courier New', Courier, monospace;
+}
+* {
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    margin: 0px;
+}
+html, body{
+    background: var(--background-color);
+    padding: 0px 5px 0px 5px;
+}
+body {
+    .container{
+        padding: 15px;
+    }
+    .welcome-section{
+        overflow: hidden;
+        white-space: nowrap;
+        margin: auto;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        animation: blink-text 1s linear infinite;
+        margin: 15px 0px 30px 0px;
+    }
+    .details-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 15px;
+        .user-image{
+            width: 100%;
+            height: 380px;
+        }
+        .bio{
+            margin: 15px 0px 15px 0px;
+            line-height: 35px;
+            .anim-name{
+                font-size: 20px;
+                font-size: 25px;
+                font-weight: bold;
+                white-space: nowrap;
+                text-align: center;
+                margin: auto;
+                overflow: hidden;
+                animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+            }
+            .anim-designation{
+                font-size: 14px;
+                font-weight: bold;
+                text-align: center;
+                margin: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                animation: typewriter 4s steps(44) 5s 1 normal both,
+                            blinkTextCursor 500ms steps(44) infinite normal;
+            }
+            .anim-department{
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+                overflow: hidden;
+                text-align: center;
+                margin: auto;
+                font-size: 4.5vw;                
+                animation: typewriter 4s steps(44) 10s 1 normal both,
+                            blinkTextCursor 500ms steps(44) infinite normal;
+            }
+            .anim-experience{
+                font-size: 14px;
+                font-weight: bold;
+                white-space: nowrap;
+                text-align: center;
+                margin: auto;
+                overflow: hidden;
+                animation: typewriter 4s steps(44) 15s 1 normal both,
+                            blinkTextCursor 500ms steps(44) infinite normal;
+            }
+        }
+    }
+    .technical-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .technical-title{
+            color: goldenrod;
+            font-size: 25px;
+            font-weight: bold;
+            margin: 15px 0px 15px 0px;
+            text-align: center;
+            width: 100%;
+            animation: blink-text 4s linear infinite;
+        }
+        .technical-details{
+            margin: 10px 0px 10px 0px;
+            .technology{
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                .logo{
+                    background: transparent;
+                    width: 100px;
+                    height: 75px;
+                    animation: zoom-logo 3s linear alternate-reverse infinite;
+                }
+                .description{
+                    width: 200px;
+                    text-align: center;
+                    font-size: 15px;
+                    font-weight: bold;
+                    line-height: 18px;
+                    word-spacing: 2px;
+                    border-bottom: 1px solid white;
+                    padding: 0px 0px 20px 0px;
+                }
+            }
+        }
+    }
+    /* @media screen and (min-width : 768px){
+        .welcome-section{
+            font-size: 60px;
+        }
+        .details-container{
+            .user-image{
+                height: 850px;
+            }
+            .bio{
+                line-height: 50px;
+                .anim-name{
+                    font-size: 40px;
+                }
+                .anim-designation{
+                    font-size: 30px;
+                }
+                .anim-department{
+                    font-size: 30px;
+                }
+                .anim-experience{
+                    font-size: 30px;
+                }
+            }
+        }
+        .technical-container{
+            .technical-title{
+                font-size: 60px;
+            }
+            .technical-details{
+                .technology{
+                    gap: 30px;
+                    .logo{
+                        width: 150px;
+                        height: 130px;
+                    }
+                    .description{
+                        line-height: 35px;
+                        word-spacing: 10px;
+                        width: 500px;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    } */
+    @media screen and (min-width : 768px){
+        .welcome-section{
+            font-size: 40px;
+        }
+        .all-details-container{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            .details-container{
+                width: 200px;
+                height: fit-content;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 20px;
+                .user-image{
+                    height: 250px;
+                    width: 200px;
+                }
+                .bio{
+                    line-height: 30px;
+                    .anim-name{
+                        font-size: 20px;
+                        font-weight: bold;
+                        animation: typewriter 4s steps(44) 1s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-designation{
+                        font-size: 10px;
+                        animation: typewriter 4s steps(44) 5s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-department{
+                        font-size: 10px;                
+                        animation: typewriter 4s steps(44) 10s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-experience{
+                        font-size: 10px;                
+                        animation: typewriter 4s steps(44) 15s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                }
+            }
+            .skill-set-container{
+                width: 500px;
+                .technical-container{
+                    margin: 30px 0px 30px 0px;
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+                    .technical-title{
+                        font-size: 30px;
+                    }
+                    .technical-title{
+                        text-align: right;
+                    }
+                    .technical-details{
+                        .technology{
+                            gap: 30px;
+                            .logo{
+                                width: 100px;
+                                height: 130px;
+                            }
+                            .description{
+                                line-height: 35px;
+                                word-spacing: 5px;
+                                width: 300px;
+                                font-size: 20px;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width : 1280px){
+        .welcome-section{
+            font-size: 60px;
+        }
+        .all-details-container{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            .details-container{
+                width: 400px;
+                height: fit-content;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 20px;
+                .user-image{
+                    height: 500px;
+                    width: 400px;
+                }
+                .bio{
+                    line-height: 40px;
+                    .anim-name{
+                        font-size: 40px;
+                        font-weight: bold;
+                        animation: typewriter 4s steps(44) 1s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-designation{
+                        font-size: 20px;
+                        animation: typewriter 4s steps(44) 5s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-department{
+                        font-size: 20px;                
+                        animation: typewriter 4s steps(44) 10s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                    .anim-experience{
+                        font-size: 20px;                
+                        animation: typewriter 4s steps(44) 15s 1 normal both,
+                                    blinkTextCursor 500ms steps(44) infinite normal;
+                    }
+                }
+            }
+            .skill-set-container{
+                width: 800px;
+                .technical-container{
+                    margin: 30px 0px 30px 0px;
+                    display: flex;
+                    justify-content: right;
+                    align-items: end;
+                    .technical-title{
+                        font-size: 50px;
+                    }
+                    .technical-title{
+                        text-align: right;
+                    }
+                    .technical-details{
+                        .technology{
+                            gap: 30px;
+                            .logo{
+                                width: 150px;
+                                height: 130px;
+                            }
+                            .description{
+                                line-height: 35px;
+                                word-spacing: 5px;
+                                width: 500px;
+                                font-size: 25px;
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
